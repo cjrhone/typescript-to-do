@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Task } from './models/task.model';
 
 @Component({
   selector: 'app-root',//where the application should be rendered, app-root name can be changed
@@ -16,10 +17,11 @@ export class AppComponent {
   //In Angular, when a variable in a component's class declaration references another variable in the class, it must be prefaced with the this keyword.
 
   firstTask: Task = new Task("Finish weekend Angular homework for Epicodus course!");
-  //Task is a data type now, thanks to export class Task 
+  //Task is a data type now, thanks to export class Task
 }
 
-  export class Task {
-    public done: boolean = false;
-    constructor(public description: string) {}
-}
+//   export class Task {
+//     public done: boolean = false;
+//     constructor(public description: string) { }
+// }
+//Exported from models/task.model.ts for MVC efficiency
