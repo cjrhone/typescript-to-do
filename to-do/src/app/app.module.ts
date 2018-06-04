@@ -4,13 +4,15 @@ import { NgModule } from '@angular/core';
 //imports general Module code from the Angular framework's core
 
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 //application's root component
 
 
 @NgModule({
   //informs Angular that this is a module
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent
   //declaration is an array of all components that will reside in this module.
   //when we generate new components they'll be added here
   ],
