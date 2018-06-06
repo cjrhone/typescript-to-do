@@ -1,14 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    <!-- Welcome to {{ title }}! -->
-    To Do List for {{month}}/{{day}}/{{year}}
-  </h1>
-  <h3>{{currentFocus}}</h3>
+  <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
+  <h3>{{currentTask}}</h3>
   <img width="300" alt="To Do List Image" src="https://assets.pcmag.com/media/images/547668-the-best-to-do-list-apps.jpg?thumb=y&width=810&height=456">
 </div>
+
+<ul>
+  <li *ngFor="let currentTask of tasks">{{currentTask.description}}</li>
+</ul>
+
 <h2>Here are some links to help you start: </h2>
 <ul>
+ <li [class]="priorityColor(currentTask)" *ngFor="let currentTask of tasks">{{currentTask.description}} <button (click)="editTask()">Edit!</button></li>
   <li>
     <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
   </li>

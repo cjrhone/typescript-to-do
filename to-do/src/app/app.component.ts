@@ -16,12 +16,33 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
   //In Angular, when a variable in a component's class declaration references another variable in the class, it must be prefaced with the this keyword.
 
-  firstTask: Task = new Task("Finish weekend Angular homework for Epicodus course!");
-  //Task is a data type now, thanks to export class Task
+
+  tasks: Task[] = [
+    new Task("Finish Angular Homework", 3),
+    new Task('Begin Brainstorming', 2),
+    new Task('Add README to Angular repos on GitHub', 2)
+  ];
+
+  priorityColor(currentTask){
+    if (currentTask.priority === 3){
+      return "bg-danger";
+    } else if (currentTask.priority === 2) {
+      return "bg-warning";
+    } else {
+      return "bg-info";
+    }
+  }
+
+  editTask() {
+    alert("Time to edit a task!");
+  }
 }
 
 //   export class Task {
 //     public done: boolean = false;
 //     constructor(public description: string) { }
 // }
-//Exported from models/task.model.ts for MVC efficiency
+//This export was moved to models/task.model.ts for MVC efficiency
+
+// firstTask: Task = new Task("Finish weekend Angular homework for Epicodus course!");
+//Task is a data type now, thanks to export class Task
