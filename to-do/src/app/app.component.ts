@@ -26,7 +26,6 @@ export class AppComponent {
 
   priorityColor(currentTask){ //property binding the priority for each task
     if (currentTask.priority === 3){
-    console.log("I work");
       return "bg-danger";
     } else if (currentTask.priority === 2) {
       return "bg-warning";
@@ -35,8 +34,14 @@ export class AppComponent {
     }
   }
 
-  selectedTask: Task = this.tasks[0];
+  selectedTask = null;
   // defined selectedTask as first task [0] in our tasks array
+
+  finishedEditing() {
+    console.log("clicked done");
+    this.selectedTask = null;
+    console.log("POOF");
+  }
 
   editTask(clickedTask) {
     this.selectedTask = clickedTask;
