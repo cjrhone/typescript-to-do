@@ -7,6 +7,7 @@ import { Task } from './models/task.model';
   styleUrls: ['./app.component.css']//how the application should be styled
 })
 // @Component == annotation or decorator
+
 export class AppComponent {
   title = 'app'; //changes {{ title }} to 'app'
   currentFocus: string = 'Angular Homework'; //changes {{ currentFocus }} to 'Angular Homework'
@@ -23,8 +24,9 @@ export class AppComponent {
     new Task('Add README to Angular repos on GitHub', 2)
   ];
 
-  priorityColor(currentTask){
+  priorityColor(currentTask){ //property binding the priority for each task
     if (currentTask.priority === 3){
+    console.log("I work");
       return "bg-danger";
     } else if (currentTask.priority === 2) {
       return "bg-warning";
@@ -33,8 +35,11 @@ export class AppComponent {
     }
   }
 
-  editTask() {
-    alert("Time to edit a task!");
+  selectedTask: Task = this.tasks[0];
+  // defined selectedTask as first task [0] in our tasks array
+
+  editTask(clickedTask) {
+    this.selectedTask = clickedTask;
   }
 }
 

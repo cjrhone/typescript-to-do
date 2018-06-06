@@ -6,6 +6,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 //application's root component
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
   //when we generate new components they'll be added here
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   //imports other pieces of our application we want for this module
   ],
   providers: [],
