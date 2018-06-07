@@ -1,0 +1,13 @@
+<div *ngIf="childSelectedTask">
+<h3>"{{childSelectedTask.description}}"<hr></h3>
+<p>Task Complete? {{childSelectedTask.done}}</p>
+
+<h3>Edit Task</h3>
+<label>Enter Task Description</label> <br>
+<input [(ngModel)]="childSelectedTask.description">
+<br>
+<input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="1">1 (Low Priority)<br>
+<input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="2">2 (Medium Priority)<br>
+<input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="3">3 (High Priority); <br>
+<button (click)="finishedEditing()">Done</button>
+</div>

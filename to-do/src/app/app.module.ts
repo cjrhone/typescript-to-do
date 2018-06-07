@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 //application's root component
 import { FormsModule } from '@angular/forms';
+import { TaskListComponent } from './task-list/task-list.component';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 
 @NgModule({
   //informs Angular that this is a module
   declarations: [
     AppComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    TaskListComponent,
+    EditTaskComponent
   //declaration is an array of all components that will reside in this module.
   //when we generate new components they'll be added here
   ],

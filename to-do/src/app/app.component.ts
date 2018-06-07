@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Task } from './models/task.model';
 
 @Component({
@@ -17,12 +17,22 @@ export class AppComponent {
   year: number = this.currentTime.getFullYear();
   //In Angular, when a variable in a component's class declaration references another variable in the class, it must be prefaced with the this keyword.
 
+  selectedTask = null;
+  // defined selectedTask as first task [0] in our tasks array
 
-  tasks: Task[] = [
+  masterTaskList: Task[] = [
     new Task("Finish Angular Homework", 3),
     new Task('Begin Brainstorming', 2),
     new Task('Add README to Angular repos on GitHub', 2)
   ];
+
+  editTask(clickedTask) {
+    this.selectedTask = clickedTask;
+  }
+
+  finishedEditing() {
+    this.selectedTask = null;
+  }
 
   priorityColor(currentTask){ //property binding the priority for each task
     if (currentTask.priority === 3){
@@ -34,19 +44,10 @@ export class AppComponent {
     }
   }
 
-  selectedTask = null;
-  // defined selectedTask as first task [0] in our tasks array
 
-  finishedEditing() {
-    console.log("clicked done");
-    this.selectedTask = null;
-    console.log("POOF");
-  }
 
-  editTask(clickedTask) {
-    this.selectedTask = clickedTask;
-  }
 }
+
 
 //   export class Task {
 //     public done: boolean = false;

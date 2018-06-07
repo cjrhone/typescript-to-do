@@ -13,15 +13,16 @@
   <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
   <h3>{{currentTask}}</h3>
   <img width="300" alt="To Do List Image" src="https://assets.pcmag.com/media/images/547668-the-best-to-do-list-apps.jpg?thumb=y&width=810&height=456">
+  <app-task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></app-task-list>
 </div>
 
 <br>
 
-<ul>
+<!-- <ul>
 <li [class]="priorityColor(currentTask)" *ngFor="let currentTask of tasks">{{currentTask.description}} <button (click)="editTask(currentTask)">Edit!</button></li>
-</ul>
+</ul> -->
 
-<div *ngIf="selectedTask">
+<!-- <div *ngIf="selectedTask">
 <h3>"{{selectedTask.description}}"<hr></h3>
 <p>Task Complete? {{selectedTask.done}}</p>
 
@@ -33,8 +34,9 @@
 <input type="radio" [(ngModel)]="selectedTask.priority" [value]="2">2 (Medium Priority)<br>
 <input type="radio" [(ngModel)]="selectedTask.priority" [value]="3">3 (High Priority); <br>
 <button (click)="finishedEditing()">Done</button>
-</div>
+</div> -->
 
+<app-edit-task [childSelectedTask]="selectedTask" (clickedDone)="finishedEditing()"></app-edit-task>
 </div>
 
 
