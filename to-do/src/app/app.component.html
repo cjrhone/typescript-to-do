@@ -8,13 +8,10 @@
 
 </form>
 
-
-<div style="text-align:center">
   <h1>To Do List for {{month}}/{{day}}/{{year}}</h1>
   <h3>{{currentTask}}</h3>
   <img width="300" alt="To Do List Image" src="https://assets.pcmag.com/media/images/547668-the-best-to-do-list-apps.jpg?thumb=y&width=810&height=456">
   <app-task-list [childTaskList]="masterTaskList" (clickSender)="editTask($event)"></app-task-list>
-</div>
 
 <br>
 
@@ -36,11 +33,10 @@
 <button (click)="finishedEditing()">Done</button>
 </div> -->
 
-<app-edit-task [childSelectedTask]="selectedTask" (clickedDone)="finishedEditing()"></app-edit-task>
-
-<app-new-task (sendTask)="addTask($event)"></app-new-task>
 
 <!-- <button (click)="submitForm(newDescription.value, newPriority.value); newDescription.value='';">Add!</button> -->
+<app-edit-task [childSelectedTask]="selectedTask" (clickedDone)="finishedEditing()"></app-edit-task>
+<app-new-task (sendTask)="addTask($event)"></app-new-task>
 
 </div>
 

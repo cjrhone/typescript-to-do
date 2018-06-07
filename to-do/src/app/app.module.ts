@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { TaskListComponent } from './task-list/task-list.component';
 import { EditTaskComponent } from './edit-task/edit-task.component';
 import { NewTaskComponent } from './new-task/new-task.component';
+import { CompletenessPipe } from './completeness.pipe';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NewTaskComponent } from './new-task/new-task.component';
     WelcomeComponent,
     TaskListComponent,
     EditTaskComponent,
-    NewTaskComponent
+    NewTaskComponent,
+    CompletenessPipe
   //declaration is an array of all components that will reside in this module.
   //when we generate new components they'll be added here
   ],
