@@ -26,6 +26,10 @@ export class AppComponent {
     new Task('Add README to Angular repos on GitHub', 2)
   ];
 
+  addTask(newTask: Task) {
+    this.masterTaskList.push(newTask);
+  }
+
   editTask(clickedTask) {
     this.selectedTask = clickedTask;
   }
